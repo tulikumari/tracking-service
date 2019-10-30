@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&sensor=true&libraries=drawing,places" async defer></script> -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=drawing,places"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFWmnD9sUsu_CMVJlWZQpxMUQEusx6KOU&libraries=geometry"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+
+    <link rel="stylesheet" href="./static/style.css" />
+    <title>GPS Tracking</title>
+    <script>
+      
+      
+      //client configuration
+      window.config = { gpsTrackingService:"http://localhost:8081/gpstrackingnew"  };
+
+      var paramsArr = window.location.href.split("?");
+      var params = "?" + paramsArr[1];
+      var urlParams = new URLSearchParams(params);
+
+      if (urlParams.has("deviceId")) {
+        window.deviceId = urlParams.get("deviceId");
+      } else {
+        alert("deviceId is missing at url");
+      }
+      // if (urlParams.has("centerLat")) {
+      //   window.centerLat = urlParams.get("centerLat") * 1;
+      // }
+      // if (urlParams.has("centerLng")) {
+      //   window.centerLng = urlParams.get("centerLng") * 1;
+      // }
+      // if (urlParams.has("zoomLevel")) {
+      //   window.zoomLevel = urlParams.get("zoomLevel") * 1;
+      // }
+      // if (urlParams.has("pointsDone")) {
+      //   window.pointsDone = urlParams.get("pointsDone") * 1;
+      // }
+      // if (urlParams.has("step")) {
+      //   window.step = urlParams.get("step") * 1;
+      // }
+      // if (urlParams.has("currentLat")) {
+      //   window.currentLat = urlParams.get("currentLat") * 1;
+      // }
+      // if (urlParams.has("currentLong")) {
+      //   window.currentLong = urlParams.get("currentLong") * 1;
+      // }
+      window.url = window.location.href;
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
